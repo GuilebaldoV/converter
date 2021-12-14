@@ -15,8 +15,8 @@ export class Binary{
     }
 
     validations(){
-    if(this.numero.length===0)return alert("Introduce un numero")
-    if(!(this.numero.match(/^[0-1]+$/))) return alert("El numero introducido no es un numero binario")
+    if(this.numero.length===0)return alert("Introduce un número.")
+    if(!(this.numero.match(/^[0-1]+$/))) return alert("El número introducido no es un numero binario.")
     if(this.base==="dec")this.toDec()
     if(this.base==="oct")this.toOctal()
     if(this.base==="hex")this.toHex()

@@ -8,11 +8,26 @@ export class UI{
         this.$hexa=document.getElementById("divHex")
     }
 
+    reset(combo,combo2,input,input2){
+
+
+      combo.selectedIndex=0;
+      combo2.selectedIndex=0;
+      input.value=""
+      input2.value=""
+
+      this.$container.innerHTML=this.html
+      for (let i = 0; i < combo.length; i++) {
+        if(i>0){
+          combo.options[i].removeAttribute("disabled")
+          combo2.options[i].removeAttribute("disabled")   
+        }
+        
+      }
+
+
+    }
     configureCombos(combo,combo2){
-
-
-
-
       for (let index = 0; index < combo2.options.length; index++) {
         if (combo2.options[index].value==combo.options[combo.selectedIndex].value){
           combo2.options[index].disabled="True"
@@ -23,7 +38,6 @@ export class UI{
         }
       }
       combo2.options[0].disabled="True"
-
     }
 
     decimalToBinary(divisores,divisor,inicial,result){
@@ -31,18 +45,17 @@ export class UI{
         this.$container.appendChild(this.$decimal)
         this.$container.appendChild(this.$binary)
         const $Explication=document.createElement("p")
-        // <h3>Solucion</>
         $Explication.innerHTML=`
         <h3>
         
-        Solucion.
+        Solución.
         
         </h3>
 
 
         Para resolver este tipo de conversiones utilizaremos la división, donde nuestro divisor fijo es el número 2.
         El dividendo de la primera división será el número a convertir inicialmente, posterior a ese, el dividendo será el cociente de la divisón anterior.
-        Dejarás de dividir el dividendo ya no sea divisible por el 2.
+        Dejarás de dividir cuando el dividendo ya no sea divisible por el 2.
 
 
         `;
@@ -54,7 +67,7 @@ export class UI{
         $Explication2.innerHTML=`
         <p>
         
-        Para escribir el resultado de la conversión, utilizaremos solo el residuo, recuerda que los números se ordenan del ultimo al primero.
+        Para escribir el resultado de la conversión, utilizaremos solo el residuo, recuerda qué los números se ordenan del ultimo al primero.
         
         <p/>
             <h3 class="center-title">${result}</h3>
@@ -72,11 +85,11 @@ export class UI{
         const $Explication=document.createElement("p")
 
         $Explication.innerHTML=`
-        <h3>Solucion.</h3>
+        <h3>Solución.</h3>
         
         Para resolver este tipo de conversiones utilizaremos la división, donde nuestro divisor fijo es el número 8.
         El dividendo de la primera división será el número a convertir inicialmente, posterior a ese, el dividendo será el cociente de la divisón anterior.
-        Dejarás de dividir el dividendo ya no sea divisible por el 8.
+        Dejarás de dividir cuando el dividendo ya no sea divisible por el 8.
         
         `;
         this.$container.appendChild($Explication)
@@ -87,7 +100,7 @@ export class UI{
         $Explication2.innerHTML=`
         <p>
         
-        Para escribir el resultado de la conversión, utilizaremos solo el residuo, recuerda que los números se ordenan del ultimo al primero.
+        Para escribir el resultado de la conversión, utilizaremos solo el residuo, recuerda qué los números se ordenan del ultimo al primero.
         
         <p/>
             <h3 class="center-title">${result}</h3>
@@ -105,11 +118,11 @@ export class UI{
         $Explication.innerHTML=`
         <h3>
         
-        Solucion.
+        Solución.
         
         </h3>
         
-        Primera tengamos en cuenta la siguiente tabla de equivalencia entre numeros decimal y hexadecimales, pues la usaremos para pasar los residuos en digitos decimales a digitos hexadecimales
+        Primera tengamos en cuenta la siguiente tabla de equivalencia entre números decimal y hexadecimales, pues la usaremos para pasar los residuos en dígitos decimales a dígitos hexadecimales
         
         `;
         this.$container.appendChild($Explication)
@@ -122,7 +135,7 @@ export class UI{
         
         Utilizaremos divisiones iteradas, donde nuestro divisor fijo es el número 16.
         El dividendo de la primera división será el número a convertir inicialmente, posterior a ese, el dividendo será el cociente de la divisón anterior.
-        Dejarás de dividir el dividendo ya no sea divisible por el 8.        <p/>
+        Dejarás de dividir cuando el dividendo ya no sea divisible por el 8.        <p/>
         
         `;
 
@@ -133,7 +146,7 @@ export class UI{
         $Explication3.innerHTML=`
         <p>
         
-        Ahora asociamos cada residuo en decimal con su respectivo hexadecimal, de arriba hacia abajo, formamos nuestro numero hexadecimal.
+        Ahora asociamos cada residuo en decimal con su respectivo hexadecimal, de arriba hacia abajo, formamos nuestro número hexadecimal.
         
         <p/>
         `;
@@ -142,7 +155,7 @@ export class UI{
         this.$container.innerHTML+=`
         <p>
         
-        Teniendo como resultado el numero:
+        Teniendo como resultado el número:
         
         <h3 class="center-title">
         ${result}
@@ -158,12 +171,12 @@ export class UI{
       this.$container.innerHTML+=`
       <h3 class="center-title">
       
-      Solucion.
+      Solución.
       
       </h3>
       <p>
       
-      Para hacer la conversión solo trabajaremos con sumas, multiplicaciones y potencias de base 2. Cada digito que compone el número a convertir se multiplicará con una potencia de base 2, y se sumaran entre ellas. Las potencias se ordenaran comenzando en 0 y terminando en n, como se muestra a continuación.
+      Para hacer la conversión solo trabajaremos con sumas, multiplicaciones y potencias de base 2. Cada dígito que compone el número a convertir se multiplicará con una potencia de base 2, y se sumarán entre ellas. Las potencias se ordenarán comenzando en 0 y terminando en n, como se muestra a continuación.
       
       <p/>
       <h4 class="center-title">
@@ -179,7 +192,7 @@ export class UI{
       this.$container.appendChild(this.$binary)
       this.$container.appendChild(this.$octal)
       this.$container.innerHTML+=`
-      <h3 class="center-title">Solucion</h3>
+      <h3 class="center-title">Solución</h3>
       <p>
       
       Tendremos una regla para resolver estas conversiones:
@@ -191,7 +204,7 @@ export class UI{
       this.$container.innerHTML+=`
       <p>
       
-      Dividimos nuestro numero binario en grupos de 3 digitos y asociamos estros grupos con su correspondiente representacion octal, con la representaciones en octal formamos nuestro numero, de arriba hacia abajo.
+      Dividimos nuestro número binario en grupos de 3 dígitos y asociamos estros grupos con su correspondiente representacion octal, con la representaciones en octal formamos nuestro número, de arriba hacia abajo.
       
       <p/>
       `
@@ -200,7 +213,7 @@ export class UI{
       this.$container.innerHTML+=`
       <p>
       
-      Formando el numero:
+      Formando el número:
       
       </p>
       <h3 class="center-title">
@@ -216,13 +229,13 @@ export class UI{
       this.$container.innerHTML+=`
       <h3 class="center-title">
       
-      Solucion.
+      Solución.
       
       </h3>
       <p>
       
       Tendremos una regla para resolver estas conversiones:
-      Un grupo de cuatro dígitos binarios se representan mediante un digito hexadecimal, como se muestra en la tabla.
+      Un grupo de cuatro dígitos binarios se representan mediante un dígito hexadecimal, como se muestra en la tabla.
       
       </p>
       `
@@ -231,7 +244,7 @@ export class UI{
       this.$container.innerHTML+=`
       <p>
       
-      Agrupamos los digitos del numero binario en grupos de 4 y asociamos el digito hexadecimal correspondiente.
+      Agrupamos los dígitos del número binario en grupos de 4 y asociamos el dígito hexadecimal correspondiente.
       
       </p>
       `
@@ -240,7 +253,7 @@ export class UI{
       this.$container.innerHTML+=`
       <p>
       
-      Por ultimo escribmos el numero en digito hexadecimales siguiendo el orden de arriba hacia abajo      </p>
+      Por ultimo escribmos el número en dígito hexadecimales siguiendo el orden de arriba hacia abajo      </p>
       
       </p>
 
@@ -253,12 +266,12 @@ export class UI{
       this.$container.appendChild(this.$octal)
       this.$container.appendChild(this.$decimal)
       this.$container.innerHTML+=`
-      <h3 class="center-title">Solucion.</h3>
+      <h3 class="center-title">Solución.</h3>
       <p>
       
       Para hacer la conversión solo trabajaremos con sumas, multiplicaciones y potencias de base 8.
-      Cada digito que compone el número a convertir se multiplicará con una potencia de base 8, y se sumaran entre ellas.
-      Las potencias se ordenaran comenzando en 0 y terminando en n, como se muestra a continuación.
+      Cada dígito que compone el número a convertir se multiplicará con una potencia de base 8, y se sumarán entre ellas.
+      Las potencias se ordenarán comenzando en 0 y terminando en n, como se muestra a continuación.
       
       </p>
       `
@@ -273,7 +286,7 @@ export class UI{
       this.$container.appendChild(this.$octal)
       this.$container.appendChild(this.$binary)
       this.$container.innerHTML+=`
-      <h3 class="center-title">Solucion.</h3>
+      <h3 class="center-title">Solución.</h3>
       <p>
       
       Tendremos una regla para resolver estas conversiones:
@@ -286,7 +299,7 @@ export class UI{
       this.$container.innerHTML+=`
       <p>
       
-      Escribiremos los digitos del número octal y lo relacionaremos con su binario.
+      Escribiremos los dígitos del número octal y lo relacionaremos con su binario.
       
       </p>
       `
@@ -308,17 +321,17 @@ export class UI{
       this.$container.appendChild(this.$octal)
       this.$container.appendChild(this.$hexa)
       this.$container.innerHTML+=`
-      <h3 class="center-title">Solucion</h3>
+      <h3 class="center-title">Solución</h3>
       <p>
       
-      Para pasar de numeros octales a hexadecimales, primero tenemos que pasar de numeros octales a numeros binarios.
+      Para pasar de números octales a hexadecimales, primero tenemos que pasar de números octales a números binarios.
       
       </p>
       `
       this.$container.innerHTML+=`
       <p>
       
-      Para pasar de octal a binario tendremos la siguiente tabla que relaciona cada digito octal mediante tres digitos binarios.
+      Para pasar de octal a binario tendremos la siguiente tabla que relaciona cada dígito octal mediante tres dígitos binarios.
       
       </p>
       `
@@ -327,7 +340,7 @@ export class UI{
       this.$container.innerHTML+=`
       <p>
       
-      Escribiremos los digitos del número octal y lo relacionaremos con su binario. 
+      Escribiremos los dígitos del número octal y lo relacionaremos con su binario. 
       
       </p>
       `
@@ -342,8 +355,8 @@ export class UI{
       this.$container.innerHTML+=`
       <p>
       
-      Ahora pasamos nuestro nuevo numero binario a un numero hexadecimal.
-      Tendremos la siguiente tabla que relaciona cada digito hexadecimal con cuatro de nuestros numeros binarios.
+      Ahora pasamos nuestro nuevo número binario a un número hexadecimal.
+      Tendremos la siguiente tabla que relaciona cada dígito hexadecimal con cuatro de nuestros números binarios.
 
       </p>
       `
@@ -351,7 +364,7 @@ export class UI{
       this.$container.innerHTML+=`
       <p>
       
-      Dividimos nuestro numero binario en grupos de 4 digitos para asociarlos a un digito hexadecimal.
+      Dividimos nuestro número binario en grupos de 4 dígitos para asociarlos a un dígito hexadecimal.
       
       </p>
       `
@@ -359,7 +372,7 @@ export class UI{
       this.$container.innerHTML+=`
       <p>
       
-      Con estos digitos formamos de arriba hacia abajo formamos nuestro nuevo numero hexadecimal.
+      Con estos dígitos formamos de arriba hacia abajo formamos nuestro nuevo número hexadecimal.
       
       </p>
       <h3 class="center-title">${data2[0]}</h3>
@@ -372,10 +385,10 @@ export class UI{
       this.$container.appendChild(this.$hexa)
       this.$container.appendChild(this.$decimal)
       this.$container.innerHTML+=`
-      <h3 class="center-title">Solucion.</h3>
+      <h3 class="center-title">Solución.</h3>
         <p>
       
-        Para hacer esta conversion lo primero que tenemos que tener en cuesta es la siguiente correspondencia entre digitos hexadecimales y decimales
+        Para hacer esta conversion lo primero que tenemos que tener en cuesta es la siguiente correspondencia entre dígitos hexadecimales y decimales
       
         </p>
       `
@@ -385,7 +398,7 @@ export class UI{
         <p>
       
         Para hacer la conversión solo trabajaremos con sumas, multiplicaciones y potencias de base 16.
-        Por cada digito de nuestro numero, multiplicaremos el digito en su representacion decimal con una potencia del numero 16 empezando en la potencia 0, estas multiplicaciones, las sumamos y la suma sera nuestro nuevo numero.
+        Por cada dígito de nuestro número, multiplicaremos el dígito en su representacion decimal con una potencia del número 16 empezando en la potencia 0, estas multiplicaciones, las sumamos y la suma sera nuestro nuevo número.
       
         </p>
       `
@@ -402,11 +415,11 @@ export class UI{
       this.$container.appendChild(this.$hexa)
       this.$container.appendChild(this.$binary)
       this.$container.innerHTML+=`
-      <h3 class="center-title">Solucion.</h3>
+      <h3 class="center-title">Solución.</h3>
         <p>
       
         Tendremos una regla para resolver estas conversiones:
-        Un grupo de cuatro dígitos binariosl se representan mediante un digito hexadecimal, como se muestra en la tabla.
+        Un grupo de cuatro dígitos binariosl se representan mediante un dígito hexadecimal, como se muestra en la tabla.
       
         </p>
       `
@@ -415,14 +428,14 @@ export class UI{
 
       this.$container.innerHTML+=`
         <p>
-          Por cada digito hexadecimal le asociamos sus cuatro digitos binarios correspondientes
+          Por cada dígito hexadecimal le asociamos sus cuatro dígitos binarios correspondientes
         </p>
       `
       this.relacionalTable(data[1],"Hexadecimal","Binario")
       this.$container.innerHTML+=`
       <p>
       
-      Por ultimo escribmos el numero el numero en binario en el orden de arriba hacia abajo
+      Por último escribmos el número el número en binario en el orden de arriba hacia abajo
       
       </p>
       <h3 class="center-title">${data[0]}</h3>
@@ -436,11 +449,11 @@ export class UI{
   this.$container.appendChild(this.$hexa)
   this.$container.appendChild(this.$binary)
   this.$container.innerHTML+=`
-  <h3 class="center-title">Solucion.</h3>
+  <h3 class="center-title">Solución.</h3>
     <p>
    
-    Para resolver esta conversion primero tenemos que pasar nuestro numero hexadecimal a un numero octal.
-    Recordemos pues la relacion entre digitos hexadecimales con digitos octales con la siguiente tabla.
+    Para resolver esta conversion primero tenemos que pasar nuestro número hexadecimal a un número octal.
+    Recordemos pues la relacion entre dígitos hexadecimales con dígitos octales con la siguiente tabla.
    
     </p>
   `
@@ -449,8 +462,8 @@ export class UI{
   this.$container.innerHTML+=`
     <p>
    
-    Por cada digito de nuestro numero hexadecimal, tomamos 4 digitos binarios, estos digitos binarios los tomamos y formamos de arriba hacia abajo nuestro
-    nuevo numero binario.
+    Por cada dígito de nuestro número hexadecimal, tomamos 4 dígitos binarios, estos dígitos binarios los tomamos y formamos de arriba hacia abajo nuestro
+    nuevo número binario.
    
     </p>
   `
@@ -459,14 +472,14 @@ export class UI{
   this.$container.innerHTML+=`
     <p>
    
-    Teniendo asi el numero binario:
+    Teniendo asi el número binario:
    
     </p>
 
     <p>
     <h3 class="center-title">${data[0]}</h3>
     
-    Ahora pasamos nuestro numero binario, usando la siguiente tabla que relaciona 3 digitos del numero binario con 1 digito octal
+    Ahora pasamos nuestro número binario, usando la siguiente tabla que relaciona 3 dígitos del número binario con 1 dígito octal
     
     </p>
     `
@@ -476,8 +489,8 @@ export class UI{
     this.$container.innerHTML+=`
     <p>
    
-    Por cada 3 digitos de nuestro numero binario a octal, tomamos 1 digito octal, estos digitos octales los tomamos y formamos de arriba hacia abajo nuestro
-    nuevo numero octal.
+    Por cada 3 dígitos de nuestro número binario a octal, tomamos 1 dígito octal, estos dígitos octales los tomamos y formamos de arriba hacia abajo nuestro
+    nuevo número octal.
     </p>
   `
 
@@ -486,7 +499,7 @@ export class UI{
 
     this.$container.innerHTML+=`
     <p>
-    Obteniendo asi el numero octal:
+    Obteniendo asi el número octal:
     </p>
     <h3 class="center-title"center-title>${data2[0]}</h3>
 

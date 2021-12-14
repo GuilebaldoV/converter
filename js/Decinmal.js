@@ -16,8 +16,8 @@ export  class Decimal{
     }
 
     validations(){
-    if(this.numero.length===0)return alert("Introduce un numero")
-    if(!(this.numero.match(/^[0-9]+$/))) return alert("Escribe solo numeros enteros postivos")
+    if(this.numero.length===0)return alert("Introduce un número.")
+    if(!(this.numero.match(/^[0-9]+$/))) return alert("Escribe solo números enteros postivos.")
     if(this.base==="byn")this.toBinary()
     if(this.base==="oct")this.toOctal()
     if(this.base==="hex")this.toHex()
@@ -30,7 +30,6 @@ export  class Decimal{
         const operation=new Operations()
         this.data=operation.iteratedDivisiones(this.numero,2)
         this.$inputAnswer.value=this.data[0]
-        console.log(this.data)
         this.ui.decimalToBinary(this.data[1].reverse(),2,this.numero,this.data[0])
         
     }

@@ -17,8 +17,8 @@ export class Octal{
     }
 
     validations(){
-    if(this.numero.length===0)return alert("Introduce un numero")
-    if(!(this.numero.match(/^[0-7]+$/))) return alert("Introduce un numero octal valido")
+    if(this.numero.length===0)return alert("Introduce un número.")
+    if(!(this.numero.match(/^[0-7]+$/))) return alert("Introduce un número octal válido.")
     if(this.base==="dec")this.toDec()
     if(this.base==="byn")this.toBinary()
     if(this.base==="hex")this.toHex()

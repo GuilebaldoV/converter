@@ -17,8 +17,8 @@ export class Hexadecimal{
     }
 
     validations(){
-    if(this.numero.length===0)return alert("Introduce un numero")
-    if(!(this.numero.match(/^[0-9ABCDEFabcdef]+$/))) return alert("El numero introducido no es un numero hexadecimal")
+    if(this.numero.length===0)return alert("Introduce un número.")
+    if(!(this.numero.match(/^[0-9ABCDEFabcdef]+$/))) return alert("El número introducido no es un número hexadecimal.")
     if(this.base==="dec")this.toDec()
     if(this.base==="byn")this.toBinary()
     if(this.base==="oct")this.toOctal()

@@ -10,10 +10,17 @@ const d=document;
 let combobox=document.getElementById("bases")
 let combobox2=document.getElementById("bases2")
 const buttonConverter=d.getElementById("converterbtn");
+const buttonReset=d.getElementById("resetbtn");
+const input=d.getElementById("first_base")
+const input2=d.getElementById("second_base")
 
 d.addEventListener("click",e=>{
     if(e.target===buttonConverter){
         selectConverter()
+    }
+
+    if(e.target==buttonReset){
+        Interface.reset(combobox,combobox2,input,input2)
     }
 
 })
@@ -31,10 +38,9 @@ combobox2.addEventListener("change",e=>{
 
 
 function selectConverter(){
-
     const conversion=`${d.getElementById("bases").value} ${d.getElementById("bases2").value}`
     if(conversion.length<5){
-        return alert("Por favor selecione ambas bases")
+        return alert("Por favor selecione ambas bases.")
     }
 
 

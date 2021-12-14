@@ -1,0 +1,111 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+
+    <title>Converter</title>
+</head>
+<body>
+    <header class="header">Conversor-Online</header>
+    <main class="main">
+        <section class="converter">
+            <h1 class="converter-title">Nuestro conversor</h1>
+            <p>Conversor-online es una herramienta online gratitua que te permitirá  hacer el cambio de base de un sistema de numeración a otro. Este te proporcionará la operatividad de tu conversión  paso a paso para facilitar tu comprensión.</p>
+            <form class="converter-form">
+                <div class="form-header">
+                    <div class="form-opc">
+                        <p>De</p>
+                        <select id="bases">
+                            <option value="" selected disabled>Seleccione una base</option>
+                            <option value="dec">Decimal</option>
+                            <option value="byn">Binario</option>
+                            <option value="oct">Octal</option>
+                            <option value="hex">Hexadecimal</option>
+                        </select>
+                    </div>
+                    <div class="form-opc">
+                        <p>A</p>
+                        <select id="bases2">
+                            <option value="" selected disabled>Seleccione una base</option>
+                            <option value="dec">Decimal</option>
+                            <option value="byn">Binario</option>
+                            <option value="oct">Octal</option>
+                            <option value="hex">Hexadecimal</option>
+                        </select>
+                    </div>
+                        
+                </div>
+                <input type="text" id="first_base" placeholder="Introduce el  numero a convertir">
+
+                <div class="buttons">
+                    <input type="button" id="converterbtn" value="Convertir">
+                    <input type="button" id="resetbtn" value="reset">
+                </div>
+                <input type="text" id="second_base">
+                <input type="button" id="copy" value="Copiar">
+
+            </form>
+        </section>
+        <section class="bases" id="container-bases">
+            <article class="base" id="divDec">
+                <h3>Sistema de numeración decimal.</h3>
+                <p>
+                    El sistema decimal conocido comúnmente, usa un conjunto de símbolos cuyo
+                    significado depende de su posición relativa al punto decimal, que en caso de
+                    ausencia se supone colocado implícitamente a la derecha.
+                    El sistema numérico decimal, basado en diez símbolos (0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
+                    que, al combinarlos, permiten representar las cantidades imaginadas, es por esto
+                    por lo que se dice que utiliza la base 10.
+                </p>
+                </article>
+            <article class="base" id="divBin">
+                <h3>Sistema de numeración binario.</h3>
+                <p>
+                    El sistema binario o sistema de base 2 es un sistema numérico que utiliza solo dos
+                    números: 0 y 1. Las computadoras operan en un sistema binario, lo que significa
+                    que pueden almacenar datos y realizar cálculos. El término también se utiliza para
+                    referirse a cualquier sistema de codificación y decodificación digital en el que existen
+                    exactamente dos estados posibles.
+                </p>
+            </article>
+            <article class="base" id="divOct">
+                <h3>Sistema de numeración octal.</h3>
+                <p>
+                    Es un sistema de numeración de base 8 que usa 8 símbolos para representar
+                    cantidades. Los símbolos utilizados son: 0, 1, 2, 3, 4, 5, 6, 7. Este sistema también
+                    posicional, ya que cada una de sus cifras tiene como posición la relativa al punto
+                    decimal que, en caso de no aparecer se supone implícita al lado derecho del
+                    número, este proporciona un método conveniente para la representación de códigos
+                    y números binarios usados en los sistemas digitales.
+                </p>
+            </article>
+            <article class="base" id="divHex">
+                <h3>Sistema de numeración hexadecimal.</h3>
+                <p>
+                    El sistema hexadecimal emplea la base 16. Este tiene 16 posibles símbolos
+                    digitales. Utiliza los dígitos del 0 al 9, más las letras A, B, C, D, E y F como sus 16
+                    símbolos digitales. Es importante recordar que los dígitos hexadecimales de A a la
+                    F son equivalentes a los valores decimales de 10 a 15.                
+                </p>
+            </article>
+            <article class="table">
+                <h3>Tabla comparativa de numeros binarios, decimales, octales y
+                    hexadecimal.</h3>
+                    <img src="assets/tabla.png" alt="Tabla comparativa">
+            </article>
+        </section>
+        <section class="publicidad">
+            <article class="publicidad2">
+                <img src="" alt="">
+            </article>
+        </section>
+        <footer class="footer">
+            
+        </footer>
+        <script src="js/index.js" type="module"></script>
+    </main>
+</body>
+</html>

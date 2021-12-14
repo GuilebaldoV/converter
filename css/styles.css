@@ -1,0 +1,313 @@
+/* Styles */
+html{
+    font-size: 18px;
+    font-family: sans-serif;
+
+}
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+
+
+
+.header{
+    background-color:#1099BB;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 50px;
+    color: white;
+    text-align: left;
+    padding: 13px;
+    font-size: 1.5rem;
+}
+
+.main{
+    margin: auto;
+    height:100vh;
+    display: grid;
+    margin-top:50px;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(3,auto);
+    grid-template-areas:
+    "convertidor convertidor convertidor convertidor convertidor convertidor convertidor convertidor convertidor publicidad publicidad publicidad"
+    "info info info info info info info info info publicidad publicidad publicidad"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+.converter{
+    width: 80%;
+    margin: auto;
+    grid-area: convertidor;
+}
+.converter p{
+    text-align: justify;
+}
+
+
+
+.converter-form{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:30px;
+    border:2px solid rgb(61, 60, 60);
+    height: 70vh;
+    justify-content:space-around;
+    align-content: space-around;
+    width: 85%;
+    margin: 8vh auto 0px auto;
+    border-radius:15px;    
+}
+.converter-form input{
+    width: 80%;
+    height:35px;    
+}
+
+.converter-form select{
+    width:40%;
+    height:30px;
+    background-color:#A584C6;
+    
+}
+
+.form-header{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    
+}
+
+.form-opc{
+    display: flex;
+    align-items: center;
+}
+
+.form-opc select{
+    width: auto;
+    
+}
+
+.form-opc p{
+    margin-right:1.5vh;
+}
+
+.buttons{
+    display: flex;
+    justify-content:space-evenly;
+    width: 100%;
+    align-items: center;
+
+}
+
+.buttons input{
+    width: 20vw;
+    background-color:#A584C6;
+    border-radius:8px;
+
+}
+
+.publicidad{
+    grid-area: publicidad;
+    /*
+    background-color: black;
+    margin-top: 100px;
+    height:10vh;
+    width:100%;
+    position:fixed;
+    top:50; */
+    height: 100%;
+}
+
+.publicidad2{
+    position: sticky;
+    top: 50;
+    width:100%;
+    height: 10%;    
+}
+
+
+
+#copy{
+    width: 30%;
+    background-color:#A584C6;
+    border-radius:8px;
+}
+
+
+.bases{
+    width:80%;
+    margin:auto;
+    grid-area:info;
+}
+
+.base{
+    text-align:justify
+}
+
+.table{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.table h3{
+    text-align: justify;
+    width: 100%;
+
+}
+
+.table img{
+    width: 80%;
+    max-width:600px;
+    min-width:350px;
+}
+
+.footer{
+    grid-area: footer;
+    background-color:#1099BB;
+    height:7vh;
+    margin-top: 5vh;
+
+}
+
+.bases p{
+    text-align: justify;
+}
+
+table{
+    /* border: "1"; */
+    border-collapse: collapse;
+}
+/* tr{
+    border:2px solid rgb(61, 60, 60);    
+    
+} */
+
+
+.border-right{
+    border-right:2px solid rgb(61, 60, 60);    
+}
+.border-top{
+    border-top:2px solid rgb(61, 60, 60);    
+
+}
+
+.residuo{
+    text-align: right;
+}
+
+.divisions{
+    display: inline-block;
+    padding: 10px;
+    min-width: 20%;
+    max-width:auto;
+}
+.container-divsions{
+    background-color: seagreen;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.table-divisions{
+    font-size: 20px;
+}
+
+.center-title{
+    text-align: center;
+}
+
+td{
+    padding: 4px;
+}
+
+
+
+.table-comparation{
+    font-size: 24px;
+    text-align: center;
+    /* border:2px solid rgb(61, 60, 60);     */
+}
+
+.div-table{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* @media(max-width:1000px){
+    html{
+        font-size:16px;
+    }
+	.form-header{
+        background-color: rebeccapurple;
+        flex-wrap: wrap;
+    }
+
+    .form-opc{
+        /* width: 60%; */
+    /* } */
+/* } */ 
+
+@media(max-width:1000px){
+
+    html{
+        font-size:17px;
+    }
+	.form-header{
+        flex-wrap: wrap;
+    }
+
+
+
+}
+
+
+@media(max-width:600px){
+
+    html{
+        font-size:15px;
+    }
+	.form-header{
+        flex-wrap: wrap;
+    }
+
+    .buttons{
+        flex-wrap: wrap;
+    }
+
+
+    .main{
+        grid-template-columns: repeat(6,1fr);
+        grid-template-areas:
+        "convertidor convertidor convertidor convertidor convertidor"
+        "info info info info info info"
+        "footer footer footer footer footer footer"
+        ;
+    }
+
+
+    .converter-form{
+        width:100%;
+    }
+
+    .buttons input{
+        width:30vw;
+    }
+
+
+    
+
+
+
+}
+
+
+
+
+
+
